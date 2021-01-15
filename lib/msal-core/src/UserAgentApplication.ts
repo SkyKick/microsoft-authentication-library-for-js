@@ -1239,7 +1239,7 @@ export class UserAgentApplication {
         const stateInfo = this.getResponseState(hash);
         
         // if set to navigate to loginRequest page post login
-        if (this.config.auth.navigateToLoginRequestUrl && window.parent === window) {
+        if (this.config.auth.navigateToLoginRequestUrl) {
             this.logger.verbose("Window.parent is equal to window, not in popup or iframe. Navigation to login request url after login turned on");
             const loginRequestUrl = this.cacheStorage.getItem(AuthCache.generateTemporaryCacheKey(TemporaryCacheKeys.LOGIN_REQUEST, stateInfo.state), this.inCookie);
 
